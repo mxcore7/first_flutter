@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class homescreen extends StatelessWidget {
@@ -6,56 +7,119 @@ class homescreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text("Test App", style: TextStyle(color: Colors.white),),
-        leading: Icon(Icons.arrow_back_ios, color: Colors.white, size: 20,),
-        actions: [
-          Icon(Icons.video_call, color: Colors.white, size: 20,),
-          SizedBox(width: 20,),
-          Icon(Icons.call, color: Colors.white, size: 20,),
-          SizedBox(width: 20,),
-          Icon(Icons.shopping_cart, color: Colors.white, size: 20,),
-          SizedBox(width: 20,),
-        ],
-      ),
-      backgroundColor: Colors.white70,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-        child: Container(
-          width: 360,
-          height: 200,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20)
-          ),
-          child: (
-          Row(
+      backgroundColor: Color(0xffEBEEF3),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Container(
-                  child:
-                  Image.asset("assets/images/homeimage.png"),
+                padding: const EdgeInsets.only(
+                  right: 35
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Column(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text("M. Blondeau", style: TextStyle(fontSize: 20),),
-                    Text("DevOps", style: TextStyle(fontSize: 10),),
-                    Row(
-                      children: [
-                        Icon(Icons.location_on),
-                        Text("Yaoundé")
-                      ],
-                    )
+                    Container(
+                      width: 65,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: Color(0xffFFFFFF),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: Text("Skip", style: TextStyle(letterSpacing: 2),),
+                      ),
+                    ),
                   ],
                 ),
-              )
-            ],
-          )
+              ),
+              SizedBox(height: 70,),
+              Container(
+                child: (
+                Image.asset("assets/images/homeview-removebg-preview.png")
+                ),
+              ),
+        SizedBox(height:30),
+              Expanded(
+                child: Container(
+                  height: double.infinity,
+                    width: double.infinity,
+                    decoration: (
+                    BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(45),
+                        topLeft: Radius.circular(45),
+                      )
+
+                    )
+                    ),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 20,),
+                      Text("Easy Appointment Booking", style: TextStyle(
+                        fontSize: 25,
+                      ),),
+                      SizedBox(height: 20,),
+                      Text("Say no to hospital wait time schelude your \n appointment directly with our doctor", style: TextStyle(
+                        color: Color(0xff92969B)
+                      ) ,),
+                      SizedBox(height: 60,),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 180),
+
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              height: 10,
+                              width: 10,
+                              decoration: BoxDecoration(
+                                color: Color(0xff92969B),
+                                borderRadius: BorderRadius.circular(50)
+                              ),
+                            ),
+                            Container(
+                              height: 10,
+                              width: 10,
+                              decoration: BoxDecoration(
+                                color: Color(0xff29A43B),
+                                borderRadius: BorderRadius.circular(50)
+                              ),
+                            ),
+                            Container(
+                              height: 10,
+                              width: 10,
+                              decoration: BoxDecoration(
+                                color: Color(0xff92969B),
+                                borderRadius: BorderRadius.circular(50)
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 100,),
+                      Container(
+                        width: 280,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: Color(0xff2B7FFC),
+                          borderRadius: BorderRadius.circular(30)
+                        ),
+                        child: Center(
+                          child: Text("Next", style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),),
+                        ),
+                      ),
+                    ],
+                  ),
+                  ),
+              ),
+        ],
           ),
         ),
       ),
