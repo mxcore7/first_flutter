@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:test01/views/music.dart';
 
 class homescreen extends StatelessWidget {
   const homescreen({super.key});
@@ -8,6 +9,7 @@ class homescreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffEBEEF3),
+
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20),
@@ -17,21 +19,29 @@ class homescreen extends StatelessWidget {
                 padding: const EdgeInsets.only(
                   right: 35
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                      width: 65,
-                      height: 30,
-                      decoration: BoxDecoration(
-                        color: Color(0xffFFFFFF),
-                        borderRadius: BorderRadius.circular(20),
+
+                child: InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>music()));
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        width: 65,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          color: Color(0xffFFFFFF),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Container(
+                          child: Center(
+                            child: Text("Skip", style: TextStyle(letterSpacing: 2),),
+                          ),
+                        ),
                       ),
-                      child: Center(
-                        child: Text("Skip", style: TextStyle(letterSpacing: 2),),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               SizedBox(height: 70,),
@@ -100,19 +110,24 @@ class homescreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 100,),
-                      Container(
-                        width: 280,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Color(0xff2B7FFC),
-                          borderRadius: BorderRadius.circular(30)
-                        ),
-                        child: Center(
-                          child: Text("Next", style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),),
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>music()));
+                        },
+                        child: Container(
+                          width: 280,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Color(0xff2B7FFC),
+                            borderRadius: BorderRadius.circular(30)
+                          ),
+                          child: Center(
+                            child: Text("Next", style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                          ),
                         ),
                       ),
                     ],
