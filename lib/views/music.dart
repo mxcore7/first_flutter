@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test01/views/cart.dart';
+import 'package:test01/views/food.dart';
 import 'package:test01/views/habit.dart';
 
 class music extends StatefulWidget {
@@ -41,8 +43,25 @@ class _musicState extends State<music> {
               ),
               label: "Music",
             ),
-            BottomNavigationBarItem(icon: Icon(Icons.heart_broken), label: "Saved"),
-            BottomNavigationBarItem(icon: Icon(Icons.radar), label: "PodCast"),
+            BottomNavigationBarItem(
+            icon: InkWell(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context)=> cart()),
+                );
+              },
+            child: Icon(Icons.heart_broken),
+              ),
+          label: "Saved",
+          ),
+            BottomNavigationBarItem(icon: InkWell(
+                onTap:(){
+                  Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=> food()),
+                  );
+                },
+                child:Icon(Icons.radar)), label: "PodCast"),
           ],iconSize: 25,
         ),
       ),
