@@ -53,7 +53,7 @@ class _foodState extends State<food> {
                   ),
 
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 17),
                     child: Column(
                       children: [
                       Text("Total Price", style: TextStyle(
@@ -128,6 +128,24 @@ class _foodState extends State<food> {
                 color: Colors.black26,
                 fontSize: 15,
               ),),
+            SizedBox(height: 40,),
+            Container(
+              height: 60,
+              width: 170,
+              decoration: BoxDecoration(
+                color: Color(0xff22B75B),
+                borderRadius: BorderRadius.circular(10)
+              ),
+              child: Center(
+                child: (
+                Text("Add to card", style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),)
+                ),
+              ),
+            )
           ],
         ),
 
